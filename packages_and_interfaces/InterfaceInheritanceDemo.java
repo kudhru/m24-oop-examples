@@ -18,7 +18,7 @@ class MyClass implements B {
 
 public class InterfaceInheritanceDemo {
     public static void main(String[] args) {
-        MyClass obj = new MyClass();
+        MyClassCustom obj = new MyClassCustom();
         obj.method1();  // From interface A
         obj.method2();  // From interface B
     }

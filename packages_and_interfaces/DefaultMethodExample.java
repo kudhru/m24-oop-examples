@@ -30,7 +30,7 @@ class MyClass implements MyInterface {
 
 public class DefaultMethodExample {
     public static void main(String[] args) {
-        MyClass obj = new MyClass();
+        MyClassCustom obj = new MyClassCustom();
         obj.method1();          // Calls implemented method1
         obj.defaultMethod();    // Calls the default method from the interface
     }
