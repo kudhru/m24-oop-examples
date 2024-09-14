@@ -12,10 +12,25 @@ interface MathOperation {
 public class LambdaDemo {
     public static void main(String[] args) {
         // Example 1: Basic Lambda Expression with a Functional Interface
+        MyFunctionalInterface messagePrinterOne = new MyFunctionalInterface() {
+            @java.lang.Override
+            public void displayMessage(String message) {
+                System.out.println("Message inside anonymous class: " + message);
+            }
+        }
+        messagePrinterOne.displayMessage("Hello World");
+
         MyFunctionalInterface messagePrinter = (message) -> System.out.println("Message: " + message);
         // Calling the method using the lambda expression
         messagePrinter.displayMessage("Hello, Lambda!");
 
+        MathOperation additionOne = new MathOperation() {
+            @java.lang.Override
+            public int operate(int a, int b) {
+//                return a + b;
+                return a * b;
+            }
+        }
         // Lambda expression implementing MathOperation (addition)
         MathOperation addition = (a, b) -> a + b;
         // Lambda expression implementing MathOperation (multiplication)
