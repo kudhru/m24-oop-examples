@@ -16,7 +16,7 @@ public class LambdaDemoSimple {
         };
         messagePrinterOne.displayMessage("Hello World");
 
-        MyFunctionalInterface messagePrinter = (message) -> System.out.println("Message: " + message);
+        MyFunctionalInterface messagePrinter = (parameter_name) -> System.out.println("Message: " + parameter_name);
         // Calling the method using the lambda expression
         messagePrinter.displayMessage("Hello, Lambda!");
 

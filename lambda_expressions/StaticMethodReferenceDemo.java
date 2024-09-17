@@ -11,6 +11,16 @@ public class StaticMethodReferenceDemo {
     }
 
     public static void main(String[] args) {
+
+        // Anonymous Inner class
+        StringOperation operation3 = new StringOperation() {
+            @java.lang.Override
+            public void perform(String message) {
+                StaticMethodReferenceDemo.printMessage(message);
+            }
+        };
+        operation3.perform("Anonymous Inner Class");
+
         // Using method reference for a static method
         StringOperation operation1 = (message) -> StaticMethodReferenceDemo.printMessage(message);
         operation1.perform("Hello, Normal Lambda Expression!"); // Output: Hello, Method References!

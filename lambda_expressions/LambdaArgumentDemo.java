@@ -13,6 +13,9 @@ public class LambdaArgumentDemo {
 
     public static void main(String[] args) {
         // Passing a lambda expression as an argument
+        StringOperation op = (str) -> str.toUpperCase();
+        printFormatted("random_string", op);
+
         printFormatted("hello", (str) -> str.toUpperCase()); // Output: HELLO
 
         // Another lambda for reversing the string
