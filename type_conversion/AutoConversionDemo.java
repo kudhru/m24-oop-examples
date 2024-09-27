@@ -9,21 +9,24 @@ class AutoConversionDemo {
         long longVal = intVal;     // int to long (automatic widening)
         float floatVal = longVal;  // long to float (automatic widening)
         double doubleVal = floatVal; // float to double (automatic widening)
-
+        char c = 'c';
+        int a = c;
+        System.out.println(c);
+        System.out.println(a);
         // Displaying the values
-        System.out.println("Automatic conversions:");
-        System.out.println("byte to short: " + shortVal);
-        System.out.println("short to int: " + intVal);
-        System.out.println("int to long: " + longVal);
-        System.out.println("long to float: " + floatVal);
-        System.out.println("float to double: " + doubleVal);
+//        System.out.println("Automatic conversions:");
+//        System.out.println("byte to short: " + shortVal);
+//        System.out.println("short to int: " + intVal);
+//        System.out.println("int to long: " + longVal);
+//        System.out.println("long to float: " + floatVal);
+//        System.out.println("float to double: " + doubleVal);
 
         // Conversions that do NOT work without explicit casting
         // Uncommenting these lines will cause a compile-time error
 
-        // byte byteFromInt = intVal;  // int to byte (narrowing, needs cast)
-        // float floatFromDouble = doubleVal;  // double to float (narrowing, needs cast)
-        // char charFromInt = intVal;  // int to char (incompatible types, needs cast)
+//         byte byteFromInt = intVal;  // int to byte (narrowing, needs cast)
+//         float floatFromDouble = doubleVal;  // double to float (narrowing, needs cast)
+//         char charFromInt = intVal;  // int to char (incompatible types, needs cast)
 
         // Correcting the above with explicit casting
         byte byteFromInt = (byte) intVal;  // int to byte (explicit narrowing)

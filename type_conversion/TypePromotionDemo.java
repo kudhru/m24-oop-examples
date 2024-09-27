@@ -12,6 +12,7 @@ class TypePromotionDemo {
         int i = 100;
         float f = 25.5f;
         // i is promoted to float before addition, then result is stored in double
+//        System.out.println(((Object)(i+f)).getClass().getName());
         double dResult = i + f;
         System.out.println("Result of int + float (promoted to float): " + dResult);  // Output: 125.5
 
@@ -26,5 +27,24 @@ class TypePromotionDemo {
         char c = 'A';  // ASCII value of 'A' is 65
         int charResult = c + i;  // char is promoted to int before addition
         System.out.println("Result of char + int (promoted to int): " + charResult);  // Output: 165
+
+//        String str = "12";
+//        int intStr = (Integer)str;
+
+        int intStr = 12;
+        String str = "Hello World ";
+        String xyz = str + 12;
+        System.out.println(str + 13);
+        System.out.println(xyz);
+//        System.out.println(str);
+
+        Integer xy = 12;
+        Double yz = (Double) xy; // not allowed
+        System.out.println(yz);
+
+        int xz = 12;
+        double yx = xz;
+        System.out.println(yx);
+
     }
 }

@@ -52,6 +52,7 @@ public class ReflectionExample {
             System.out.println("Constructors:");
             for (Constructor<?> constructor : constructors) {
                 System.out.println(constructor);
+                System.out.println(constructor.getParameterTypes());
             }
 
             // 3. Instantiating an Object Using Reflection
@@ -68,21 +69,28 @@ public class ReflectionExample {
 
             // Accessing a field value and modifying it
             Field nameField = personClass.getDeclaredField("name");
+//            System.out.println("Original Name: " + nameField.get(personObj));
             nameField.setAccessible(true); // Make private field accessible
             System.out.println("Original Name: " + nameField.get(personObj));
             nameField.set(personObj, "Bob");
             System.out.println("Modified Name: " + nameField.get(personObj));
+
+            Field nameField1 = personClass.getDeclaredField("name");
+            nameField1.setAccessible(true); // Make private field accessible
+            System.out.println("Original Name: " + nameField1.get(personObj));
 
             // 5. Accessing and Invoking Methods
             Method getNameMethod = personClass.getMethod("getName");
             String name = (String) getNameMethod.invoke(personObj);
             System.out.println("Name from getName(): " + name);
 
-            Method setAgeMethod = personClass.getMethod("setAge", int.class);
-            setAgeMethod.invoke(personObj, 35);
             Method getAgeMethod = personClass.getMethod("getAge");
             int age = (int) getAgeMethod.invoke(personObj);
-            System.out.println("Age from getAge(): " + age);
+            System.out.println("Original Age from getAge(): " + age);
+            Method setAgeMethod = personClass.getMethod("setAge", int.class);
+            setAgeMethod.invoke(personObj, 35);
+            age = (int) getAgeMethod.invoke(personObj);
+            System.out.println("Modified Age from getAge(): " + age);
 
             // 6. Accessing Private Methods
             Method privateMethod = personClass.getDeclaredMethod("privateMethod");
