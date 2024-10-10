@@ -2,7 +2,7 @@ enum Apple {
 //    Jonathan(10), GoldenDel(9), RedDel(12), Winesap(15), Cortland(8);
 //    Jonathan, GoldenDel, RedDel, Winesap, Cortland;
 //    Jonathan, GoldenDel, RedDel, Winesap, Cortland;
-    Jonathan, GoldenDel, RedDel, Winesap(4), Cortland;
+    Jonathan, GoldenDel(5), RedDel, Winesap(4), Cortland;
 
     private int price;  // price of each apple variety
 
@@ -21,6 +21,15 @@ enum Apple {
         return price;
     }
 
+//    int compare(Apple apple) {
+//        Apple x = new Apple();
+//        return -1;
+//    }
+
+    void setPrice(int p) {
+        price = p;
+    }
+
 //    Jonathan, GoldenDel, RedDel, Winesap(4), Cortland(10);
 }
 
@@ -34,5 +43,11 @@ public class EnumConstructorDemo {
         System.out.println("All apple prices:");
         for (Apple a : Apple.values())
             System.out.println(a + " costs " + a.getPrice() + " cents.");
+
+//        Apple x = new Apple();
+//        System.out.println("x");
+        Apple y = Apple.GoldenDel;
+        y.setPrice(10);
+        System.out.println(y + " costs " + y.getPrice() + " cents.");
     }
 }

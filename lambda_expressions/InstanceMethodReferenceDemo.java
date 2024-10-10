@@ -4,7 +4,6 @@ interface StringOperation {
 }
 
 public class InstanceMethodReferenceDemo {
-
     // Instance method to be referenced
     public void display(String message) {
         System.out.println(message);

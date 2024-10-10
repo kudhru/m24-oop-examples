@@ -10,10 +10,10 @@ class Animal {
         System.out.println("Animal constructor called.");
     }
 
-    Animal() {
-        name = "";
-        age = -1;
-    }
+//    Animal() {
+//        name = "";
+//        age = -1;
+//    }
 
     void displayInfo() {
         System.out.println("Name: " + name + ", Age: " + age);

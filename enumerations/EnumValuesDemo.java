@@ -1,5 +1,7 @@
 enum Apple {
     Jonathan, GoldenDel, RedDel, Winesap, Cortland
+
+
 }
 
 public class EnumValuesDemo {
@@ -13,5 +15,12 @@ public class EnumValuesDemo {
         // Using valueOf() to get a specific constant
         Apple ap = Apple.valueOf("Winesap");
         System.out.println("\nSelected apple variety: " + ap);
+
+        Apple a = Apple.GoldenDel;
+        Apple b = Apple.RedDel;
+        Apple c = Apple.GoldenDel;
+
+        System.out.println(a == c);
+        System.out.println(a.equals(c));
     }
 }
