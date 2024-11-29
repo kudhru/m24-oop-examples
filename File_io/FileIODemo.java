@@ -12,17 +12,20 @@ public class FileIODemo {
     try {
         CreateWritingFile = new PrintWriter(new FileOutputStream("stuff.txt"));
         CreateWritingFile.println("How you doing??");
-    } catch (FileNotFoundException e) {
-        e.printStackTrace();
+        CreateWritingFile.close();
+    } catch (FileNotFoundException e2) {
+        e2.printStackTrace();
+        System.err.println(e2.getMessage());
     }
 
    
 
     PrintWriter AppendingorCreatingFile;
     try{
-    AppendingorCreatingFile = new PrintWriter (new FileOutputStream("Appended.txt", true));
+    AppendingorCreatingFile = new PrintWriter (new FileOutputStream("File_io/Read.txt", true));
 
-    AppendingorCreatingFile.println("Isnt this good");
+    AppendingorCreatingFile.println("Isnt this good?");
+    AppendingorCreatingFile.close();
     }
     catch (FileNotFoundException e){
         System.err.println(e.getMessage());
