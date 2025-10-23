@@ -7,5 +7,7 @@ public class UncaughtUncheckedExceptionExample {
         System.out.println("This line will be printed as it is before the exception.");
         System.out.println(numbers[10]);  // This will throw ArrayIndexOutOfBoundsException
         System.out.println("This line will not be executed due to the exception.");
+
+        // Some other code after this...
     }
 }

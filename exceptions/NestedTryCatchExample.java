@@ -14,10 +14,11 @@ public class NestedTryCatchExample {
                 // Attempt to access an invalid index (ArrayIndexOutOfBoundsException)
                 System.out.println(numbers[10]);  // This will throw ArrayIndexOutOfBoundsException
 
-            } catch (NullPointerException e) {
-                // Inner catch block handles NullPointerException only
-                System.out.println("Caught NullPointerException in inner catch block: " + e.getMessage());
             }
+//            catch (NullPointerException e) {
+//                // Inner catch block handles NullPointerException only
+//                System.out.println("Caught NullPointerException in inner catch block: " + e.getMessage());
+//            }
 
             // More code here, but the inner block will throw an exception before reaching this point
 

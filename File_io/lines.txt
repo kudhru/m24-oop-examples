@@ -1,0 +1,5 @@
+Roses are red
+Violets are blue
+
+Whitespace matters
+End
