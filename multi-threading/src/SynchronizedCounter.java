@@ -5,8 +5,25 @@ import java.util.List;
 public class SynchronizedCounter {
     static class Counter {
         private int value = 0;
-        synchronized void inc() { value++; }
-        synchronized int get() { return value; }
+//        synchronized void inc() {
+//            value++;
+//        }
+//        synchronized int get() {
+//            return value;
+//        }
+
+        private final Object lock = new Object();
+        void inc() {
+            synchronized (lock) {
+                value++; // critical section
+            }
+            value++;
+        }
+        int get() {
+            synchronized (lock) {
+                return value;
+            }
+        }
     }
 
     public static void main(String[] args) throws InterruptedException {
