@@ -5,17 +5,17 @@ import java.util.List;
 public class RaceCondition {
     static class Counter {
         int value = 400000;
+        Object lock = new Object();
         void inc() {
-            value++;
-            // value = value + 1;
-            // Load value into a register
-            // Add 1 to the register
-            // Save the resultant value back into the value (memory location / RAM)
+            synchronized (lock) {
+                value = value + 1;
+            }
 
         }
-
         void dec() {
-            value--;
+            synchronized (lock) {
+                value = value - 1;
+            }
         }
     }
 
@@ -42,7 +42,7 @@ public class RaceCondition {
         int perThread = 100_000;
 
         List<Thread> list = new ArrayList<>();
-        Runnable r = new ProperRunnableClass(perThread, counter);
+        Runnable r = new ProperRunnableClass(perThread, counter); // Task
 
         for (int i = 0; i < threads; i++) {
             Thread thread = new Thread(r);

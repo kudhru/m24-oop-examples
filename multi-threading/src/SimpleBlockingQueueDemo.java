@@ -18,6 +18,7 @@ public class SimpleBlockingQueueDemo {
             try {
                 for (int i = 1; i <= 5; i++) {
                     int x = q.take(); // waits if empty
+                    int y = q.poll(400, TimeUnit.MILLISECONDS);
                     System.out.println("consumed " + x);
                 }
             } catch (InterruptedException e) { Thread.currentThread().interrupt(); }
